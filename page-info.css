@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+container {
+  flex: 0 0 auto;
+  width: 310px;
+  /*height: 405px;*/
+  margin: 32px;
+
+  display: flex;
+  background-size: cover;
+}
+
+page-info {
+  font-family: Helvetica, Tahoma, sans-serif;
+  flex: 1;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  box-shadow: 0 4px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+page-info header {
+  box-sizing: border-box;
+  padding: 18px;
+  width: 100%;
+  display: block;
+}
+
+page-info header spacer {
+  display: block;
+  height: 8px;
+}
+
+page-info origin {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+page-info button.revoke-cert-decision {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 2px 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+page-info site-settings {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+page-info hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+page-info site-settings section:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+page-info site-settings spacer {
+  display: block;
+  height: 8px;
+}
+
+page-info site-settings section-title {
+  font-weight: bold;
+}
