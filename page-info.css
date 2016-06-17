@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -18,7 +19,7 @@ body {
 
 container {
   flex: 0 0 auto;
-  width: 310px;
+  width: 320px;
   /*height: 405px;*/
   margin: 32px;
 
@@ -27,44 +28,17 @@ container {
 }
 
 page-info {
-  font-family: Helvetica, Tahoma, sans-serif;
+  font-family: Roboto, Helvetica, Tahoma, sans-serif;
   flex: 1;
   font-size: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 2px;
-  box-shadow: 0 4px 16px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
-page-info header {
-  box-sizing: border-box;
-  padding: 18px;
-  width: 100%;
-  display: block;
-}
-
-page-info header spacer {
-  display: block;
-  height: 8px;
-}
-
-page-info origin {
-  display: block;
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-page-info button.revoke-cert-decision {
-  background: white;
-  border: 1px solid gray;
-  border-radius: 4px;
-  padding: 2px 4px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-page-info site-settings {
-  display: flex;
-  flex-direction: column;
-  padding: 18px;
+section {
+  margin: 16px;
 }
 
 page-info hr {
@@ -72,15 +46,112 @@ page-info hr {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-page-info site-settings section:not(:last-child) {
-  margin-bottom: 18px;
+a {
+  text-decoration: none;
+  color: #4084F3;
 }
 
-page-info site-settings spacer {
+a:hover {
+  cursor: pointer;
+}
+
+/* Page Details */
+
+section.page summary, section.page explanation {
   display: block;
-  height: 8px;
+  width: 100%;
 }
 
-page-info site-settings section-title {
-  font-weight: bold;
+section.page summary {
+  color: #C53929;
 }
+
+site-spacer {
+  display: block;
+  width: 100%;
+  height: 16px;
+}
+
+/* Site Details */
+
+permission {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+permission spacer {
+  height: 40px;
+}
+
+permission {
+  display: flex;
+  flex-direction: row;
+}
+
+permission img {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+permission text {
+  height: 18px;
+  padding: 2px 8px;
+  font-size: 14px;
+
+  flex: 1 1 auto;
+}
+
+permission cookie-details {
+  padding: 8px 8px 2px;
+  margin-left: 18px;
+}
+
+permission dropdown {
+  padding: 2px;
+  font-size: 12px;
+  height: 18px;
+}
+
+permission dropdown arrow {
+  margin-left: 8px;
+}
+
+permission-spacer {
+  display: block;
+  width: 100%;
+  height: 24px;
+}
+
+site-settings-link {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+/* Highlight */
+
+
+button {
+  background: white;
+  border-radius: 4px;
+  border: 1px solid gray;
+  padding: 4px;
+}
+
+button:active {
+  background: #F0F0F0;
+}
+
+body.highlight page-info                   { background: #FDD; }
+body.highlight section                     { background: #FFF; }
+body.highlight site-spacer                 { background: #FEA; }
+body.highlight permission-spacer           { background: #AEF; }
+body.highlight permission img              { background: #F66; }
+body.highlight permission text             { background: #CFC; }
+body.highlight permission cookie-details   { background: #8F8; }
+body.highlight permission dropdown         { background: #AAA; }

@@ -7,34 +7,56 @@
 
 <container>
   <page-info>
-    <header>
-      <origin>expired.badssl.com</origin>
-      <spacer></spacer>
-      <security-summary>
-        Your connection to this site is not private. <a class="details-link" href="javascript:void;">Details</a>
-      </security-summary>
-      <spacer></spacer>
-      <button class="revoke-cert-decision">Stop using an invalid certificate</button>
-    </header>
+    <section class="page">
+      <summary>
+        Your connection to this site is not secure
+      </summary>
+      <site-spacer></site-spacer>
+      <explanation>
+        You should not enter any sensitive information on this website (e.g. passwords or credit card numbers), because it could be stolen by attackers. <a class="details-link" href="javascript:void;">Details</a>
+      </explanation>
+      <site-spacer></site-spacer>
+      <explanation>
+        You have temporarily trusted an invalid security certificate for this site. <a class="details-link" href="javascript:void;">Untrust now</a>
+      </explanation>
+    </section>
     <hr>
-    <site-settings>
-      <section>
-        <section-title>Cookies</section-title>
-        <spacer></spacer>
-        <content>🍪 <a class="details-link" href="javascript:void;">15 from this site</a>, 1 from other sites</content>
-      </section>
-      <section>
-        <section-title>Permissions</section-title>
-        <spacer></spacer>
-        <content>▢ Fullscreen: Allowed by you ↕</content>
-        <br>
-      </section>
-      <section>
-        <content><a href="javascript:void;">Site Settings</a></content>
-      </section>
+    <section class="site">
+      <permission>
+        <img src="img/cookie.png">
+        <text>Cookies</text>
+      </permission>
+      <permission>
+        <cookie-details><a class="details-link" href="javascript:void;">30 from this site</a>, 190 from other sites
+        </cookie-details>
+      </permission>
+      <permission-spacer></permission-spacer>
+      <permission>
+        <img src="img/geolocation.png">
+        <text>Location</text>
+        <dropdown>Allow <arrow>&#9662;</arrow></dropdown>
+      </permission>
+      <permission-spacer></permission-spacer>
+      <permission>
+        <img src="img/camera.png">
+        <text>Camera</text>
+        <dropdown>Block <arrow>&#9662;</arrow></dropdown>
+      </permission>
+      <permission-spacer></permission-spacer>
+      <permission>
+        <img src="img/microphone.png">
+        <text>Microphone</text>
+        <dropdown>Allow <arrow>&#9662;</arrow></dropdown>
+      </permission>
+      <permission-spacer></permission-spacer>
+      <site-settings-link><a href="javascript:void;">SITE SETTINGS</a></site-settings-link>
+    </section>
     </site-settings>
   </page-info>
 </container>
+
+<button onclick="document.body.classList.toggle('highlight');" autofocus>Highlight</button>
+
 
 </body>
 </html>
