@@ -2,6 +2,7 @@
 <html>
   <meta charset="utf-8">
   <title>Page Info</title>
+  <link rel="shortcut icon" href="img/info.png">
   <link rel="stylesheet" href="page-info.css">
 <body>
 
@@ -17,39 +18,99 @@
       </explanation>
       <site-spacer></site-spacer>
       <explanation>
-        You have temporarily trusted an invalid security certificate for this site. <a class="details-link" href="javascript:void;">Untrust now</a>
+        You have chosen to disable security warnings on this site. <a class="details-link" href="javascript:void;">Re-enable warnings.</a>
       </explanation>
     </section>
     <hr>
     <section class="site">
       <permission>
-        <img src="img/cookie.png">
+        <img src="img/export-page-info/infobar_cookie-xhdpi 2.png">
         <text>Cookies</text>
       </permission>
       <permission>
         <cookie-details><a class="details-link" href="javascript:void;">30 from this site</a>, 190 from other sites
         </cookie-details>
       </permission>
+
       <permission-spacer></permission-spacer>
       <permission>
-        <img src="img/geolocation.png">
+        <img src="img/export-page-info/site_settings_location-xhdpi.png">
         <text>Location</text>
-        <dropdown>Allow <arrow>&#9662;</arrow></dropdown>
+        <dropdown>Allow <img src="./img/updown.png"></dropdown>
       </permission>
+
       <permission-spacer></permission-spacer>
       <permission>
-        <img src="img/camera.png">
+        <img src="img/export-page-info/site_settings_media-xhdpi.png">
         <text>Camera</text>
-        <dropdown>Block <arrow>&#9662;</arrow></dropdown>
+        <dropdown>Block <img src="./img/updown.png"></dropdown>
       </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_mic-xhdpi.png">
+        <text>Microphone</text>
+        <dropdown>Default (Ask) <img src="./img/updown.png"></dropdown>
+      </permission>
+
       <permission-spacer></permission-spacer>
       <permission>
-        <img src="img/microphone.png">
-        <text>Microphone</text>
-        <dropdown>Allow <arrow>&#9662;</arrow></dropdown>
+        <img src="img/export-page-info/site_settings_notification-xhdpi.png">
+        <text>Notifications</text>
+        <dropdown>Allow <img src="./img/updown.png"></dropdown>
       </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_javascript-xhdpi.png">
+        <text>Javascript</text>
+        <dropdown>Default (Allow) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_plugins-xhdpi.png">
+        <text>Plugins</text>
+        <dropdown>Default (Allow) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_image-xhdpi.png">
+        <text>Images</text>
+        <dropdown>Default (Block) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_popups-xhdpi.png">
+        <text>Popups</text>
+        <dropdown>Default (Allow) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/background-sync.png">
+        <text>Background Sync</text>
+        <dropdown>Default (Allow) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/site_settings_auto_downloads-xhdpi.png">
+        <text>Automatic Downloads</text>
+        <dropdown>Default (Ask) <img src="./img/updown.png"></dropdown>
+      </permission>
+
+      <permission-spacer class="hidden"></permission-spacer>
+      <permission class="hidden">
+        <img src="img/export-page-info/infobar_midi-xhdpi 2.png">
+        <text>MIDI</text>
+        <dropdown>Default (Ask) <img src="./img/updown.png"></dropdown>
+      </permission>
+
       <permission-spacer></permission-spacer>
-      <site-settings-link><a href="javascript:void;">SITE SETTINGS</a></site-settings-link>
+      <a href="javascript:" id="site-settings-link">SHOW ALL</a>
     </section>
     </site-settings>
   </page-info>
@@ -57,6 +118,22 @@
 
 <button onclick="document.body.classList.toggle('highlight');" autofocus>Highlight</button>
 
+<script>
+var $ = document.body.querySelector.bind(document.body);
+var $$ = document.body.querySelectorAll.bind(document.body);
+
+function showAll(nodeList) {
+  for (var i = 0; i < nodeList.length; i++) {
+      nodeList[i].classList.remove("hidden");
+    }
+}
+
+$("#site-settings-link").addEventListener("click", function() {
+  $("#site-settings-link").textContent = "SITE SETTINGS";
+  showAll($$("permission.hidden"));
+  showAll($$("permission-spacer.hidden"));
+});
+</script>
 
 </body>
 </html>

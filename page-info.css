@@ -38,7 +38,7 @@ page-info {
 }
 
 section {
-  margin: 16px;
+  margin: 20px 16px;
 }
 
 page-info hr {
@@ -53,6 +53,10 @@ a {
 
 a:hover {
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Page Details */
@@ -89,9 +93,11 @@ permission {
   flex-direction: row;
 }
 
-permission img {
+permission > img:first-child {
   width: 18px;
   height: 18px;
+
+  margin: -1px;
 
   display: flex;
   align-items: center;
@@ -99,8 +105,8 @@ permission img {
 }
 
 permission text {
-  height: 18px;
-  padding: 2px 8px;
+  height: 16px;
+  padding: 0px 8px;
   font-size: 14px;
 
   flex: 1 1 auto;
@@ -108,17 +114,23 @@ permission text {
 
 permission cookie-details {
   padding: 8px 8px 2px;
-  margin-left: 18px;
+  margin-left: 16px;
 }
 
 permission dropdown {
-  padding: 2px;
   font-size: 12px;
-  height: 18px;
+  height: 16px;
 }
 
 permission dropdown arrow {
-  margin-left: 8px;
+  /*margin-left: 8px;*/
+}
+
+permission dropdown img {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -30%;
 }
 
 permission-spacer {
@@ -127,7 +139,11 @@ permission-spacer {
   height: 24px;
 }
 
-site-settings-link {
+permission.show-all text {
+  margin-left: 16px;
+}
+
+#site-settings-link {
   display: block;
   width: 100%;
   text-align: right;
